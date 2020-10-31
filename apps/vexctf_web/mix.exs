@@ -49,7 +49,9 @@ defmodule VexCTFWeb.MixProject do
       {:gettext, "~> 0.11"},
       {:vexctf, in_umbrella: true},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:absinthe_plug, "~> 1.5.0"},
+      {:absinthe, "~> 1.5.0"},
     ]
   end
 

@@ -40,8 +40,6 @@ defmodule VexCTF.MixProject do
       {:ecto_sql, "~> 3.4"},
       {:postgrex, ">= 0.0.0"},
       {:jason, "~> 1.0"},
-      {:absinthe_plug, "~> 1.5.0"},
-      {:absinthe, "~> 1.5.0"},
       {:fast64, "~> 0.1.3"}
     ]
   end
