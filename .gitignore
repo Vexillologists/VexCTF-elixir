@@ -22,3 +22,6 @@ erl_crash.dump
 
 # Temporary files for e.g. tests
 /tmp
+
+config/prod/config.secret.exs
+config/prod/runtime.secret.exs

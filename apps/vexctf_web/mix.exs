@@ -11,7 +11,10 @@ defmodule VexCTF.Web.MixProject do
       lockfile: "../../mix.lock",
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      name: "VexCTF Web",
+      source_url: "https://github.com/VexCTF/VexCTF-elixir",
+      homepage_url: "https://github.com/VexCTF/VexCTF-elixir"
     ]
   end
 
@@ -26,7 +29,8 @@ defmodule VexCTF.Web.MixProject do
     [
       {:absinthe_plug, "~> 1.5"},
       {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.4"}
+      {:plug_cowboy, "~> 2.4"},
+      {:vexctf, in_umbrella: true}
     ]
   end
 end

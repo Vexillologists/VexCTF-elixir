@@ -1,4 +1,8 @@
 defmodule VexCTF.Web.Schema do
+  @moduledoc """
+  The GraphQL Schema for VexCTF
+  """
+
   use Absinthe.Schema
 
   alias VexCTF.Web.Resolvers
