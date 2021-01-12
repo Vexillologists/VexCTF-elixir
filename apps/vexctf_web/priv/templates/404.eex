@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+</head>
+<body>
+    <!-- This is a template 404 not found.
+         This uses EEx which is similar to EJS or ERB.
+         You may change this however you like, e.g. for
+         SPAs, rendering some 404 page -->
+    <h1>404 Not Found</h1>
+    <p>The webpage or file you were trying to access was not found.</p>
+</body>
+</html>
