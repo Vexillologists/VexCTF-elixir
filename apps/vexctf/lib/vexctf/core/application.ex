@@ -8,6 +8,7 @@ defmodule VexCTF.Core.Application do
   @impl true
   def start(_type, _args) do
     children = [
+      {VexCTF.Core.Repo, []}
       # Starts a worker by calling: VexCTF.Core.Worker.start_link(arg)
       # {VexCTF.Core.Worker, arg}
     ]

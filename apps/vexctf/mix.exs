@@ -14,7 +14,7 @@ defmodule VexCTF.Core.MixProject do
       deps: deps(),
       name: "VexCTF Core",
       source_url: "https://github.com/VexCTF/VexCTF-elixir",
-      homepage_url: "https://github.com/VexCTF/VexCTF-elixir",
+      homepage_url: "https://github.com/VexCTF/VexCTF-elixir"
     ]
   end
 
@@ -26,6 +26,9 @@ defmodule VexCTF.Core.MixProject do
   end
 
   defp deps do
-    []
+    [
+      {:ecto_sql, "~> 3.5"},
+      {:postgrex, ">= 0.0.0"}
+    ]
   end
 end

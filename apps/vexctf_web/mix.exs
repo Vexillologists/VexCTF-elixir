@@ -28,6 +28,7 @@ defmodule VexCTF.Web.MixProject do
   defp deps do
     [
       {:absinthe_plug, "~> 1.5"},
+      {:absinthe_relay, "~> 1.5"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.4"},
       {:vexctf, in_umbrella: true}
