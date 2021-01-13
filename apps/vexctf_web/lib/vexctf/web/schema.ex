@@ -5,13 +5,12 @@ defmodule VexCTF.Web.Schema do
 
   use Absinthe.Schema
   use Absinthe.Relay.Schema, :modern
-  alias Absinthe.Relay.Connection
 
   query do
     @desc "Get the API version of this VexCTF implementation"
     field :api_version, :string do
-      resolve(fn _, _, %{context: %{resolver: resolver}} ->
-        {:ok, GenServer.call(resolver, :api_version)}
+      resolve(fn _, %{context: %{resolver: resolver}} ->
+        GenServer.call(resolver, :api_version)
       end)
     end
 
@@ -20,8 +19,9 @@ defmodule VexCTF.Web.Schema do
         %{type: :user}, _ ->
           {:ok, %{username: "TODO"}}
 
-        %{type: :team}, _ ->
-          {:ok, %{team_name: "TODO"}}
+        %{type: :team, id: id}, %{context: %{resolver: resolver}} ->
+          IO.puts(id)
+          GenServer.call(resolver, {:get_team, id})
       end)
     end
   end
@@ -44,8 +44,16 @@ defmodule VexCTF.Web.Schema do
 
     connection field(:members, node_type: :user) do
       resolve(fn
-        pagination_args, _ ->
-          Connection.from_list([], pagination_args)
+        %{id: id}, args, %{context: %{resolver: resolver}} ->
+          res = GenServer.call(resolver, {:get_team_members, id, args})
+
+          case res do
+            {:ok, conn} ->
+              conn
+
+            {:error, error} ->
+              {:error, error}
+          end
       end)
     end
   end

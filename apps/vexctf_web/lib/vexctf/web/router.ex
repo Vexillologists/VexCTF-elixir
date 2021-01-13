@@ -13,6 +13,7 @@ defmodule VexCTF.Web.Router do
     ],
     json_decoder: Jason
   )
+
   plug(VexCTF.Web.ResolverLink)
 
   plug(:put_secure_browser_headers)

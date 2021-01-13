@@ -27,6 +27,7 @@ defmodule VexCTF.Core.MixProject do
 
   defp deps do
     [
+      {:absinthe_relay, "~> 1.5"},
       {:ecto_sql, "~> 3.5"},
       {:postgrex, ">= 0.0.0"}
     ]
